@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 场景索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafafa;
+      color: #1e1e1e;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* ——— 顶部导航 ——— */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0 1rem;
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+
+    .site-mark {
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.4px;
+      color: #2a2a2a;
+      background: #f0f0f0;
+      padding: 0.2rem 0.7rem;
+      border-radius: 24px;
+    }
+
+    .top-nav a {
+      font-size: 0.9rem;
+      color: #3a6ea5;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .top-nav a:hover {
+      color: #1d4b7a;
+      text-decoration: underline;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    /* ——— 核心介绍 ——— */
+    .hero {
+      margin-bottom: 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #3d3d3d;
+      max-width: 620px;
+    }
+
+    .intro-block {
+      background: #ffffff;
+      padding: 1.6rem 1.8rem;
+      border-radius: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      border: 1px solid #eee;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .intro-block p {
+      margin-bottom: 0.75rem;
+    }
+
+    .intro-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-block a {
+      color: #1d4b7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #cbdae9;
+    }
+
+    .intro-block a:hover {
+      border-bottom-color: #1d4b7a;
+    }
+
+    /* ——— 三个场景模块 ——— */
+    .scenes-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .scene-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border: 1px solid #eaeef2;
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .scene-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .scene-card .badge {
+      display: inline-block;
+      background: #e9f0f9;
+      color: #2b5a88;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.1rem 0.5rem;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+    }
+
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #3b3b3b;
+      margin: 0.5rem 0 0.6rem;
+    }
+
+    .scene-card .note {
+      font-size: 0.85rem;
+      color: #6b6b6b;
+      border-left: 2px solid #dbe2ea;
+      padding-left: 0.75rem;
+    }
+
+    /* ——— 常见说明 ——— */
+    .faq-summary {
+      margin-top: 1.2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e4e4e4;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.1rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      color: #222;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: #4a4a4a;
+    }
+
+    .faq-item a {
+      color: #2b5a88;
+      text-decoration: none;
+      border-bottom: 1px solid #d0dceb;
+    }
+
+    .faq-item a:hover {
+      border-bottom-color: #1d4b7a;
+    }
+
+    /* ——— 脚注 ——— */
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ececec;
+      font-size: 0.82rem;
+      color: #777;
+      text-align: center;
+      letter-spacing: 0.2px;
+    }
+
+    /* ——— 响应式 ——— */
+    @media (max-width: 600px) {
+      .page {
+        padding: 1.5rem 1rem 2rem;
+      }
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .intro-block {
+        padding: 1.2rem 1.2rem;
+      }
+      .scene-card {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+      <span class="site-mark">华体会</span>
+      <div class="nav-links">
+        <a href="#intro">概述</a>
+        <a href="#scenes">场景</a>
+        <a href="#faq">说明</a>
+        <a href="https://www1-hthsports.com" target="_blank" rel="noopener">华体会</a>
+      </div>
+    </nav>
+
+    <!-- 核心介绍 -->
+    <div class="hero" id="intro">
+      <h1>日常查询 · 对照 · 延伸</h1>
+      <p>围绕「华体会」构建的轻量索引页，聚焦信息查找、功能对照与上下文理解，不堆砌冗词。</p>
+    </div>
+
+    <div class="intro-block">
+      <p>平台 <a href="https://www1-hthsports.com" target="_blank" rel="noopener">华体会</a> 作为体育与活动信息的聚合入口，其页面结构偏向模块化展示。日常使用中，用户常需要快速定位某一类内容、比对不同模块的呈现逻辑，或根据已有信息延伸查找相关条目。本页从这三个操作习惯出发，整理出三个典型场景，并附简要说明，方便快速建立使用脉络。</p>
+      <p>以下场景均基于真实页面布局提炼，不包含未公开功能或推测性描述。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <h2 class="scenes-title" id="scenes">三个操作场景</h2>
+    <div class="scene-grid">
+      <div class="scene-card">
+        <h3>
+          场景一 · 快速定位
+          <span class="badge">查询</span>
+        </h3>
+        <p>当需要从首页大量卡片和列表中找到特定赛事或活动分类时，通过顶部导航分区与视觉权重排序，可减少二次筛选。建议先关注模块标题的颜色与字号层级，它们对应不同的内容范围。</p>
+        <div class="note">对照要点：同级模块的间距和图标风格是否一致，可作为判断内容归类的辅助线索。</div>
+      </div>
+
+      <div class="scene-card">
+        <h3>
+          场景二 · 模块对照
+          <span class="badge">对照</span>
+        </h3>
+        <p>页面中常出现信息密度不同的区块（如赛事预告与结果汇总）。对照阅读时，注意时间格式、状态标签（进行中/已结束）以及数据字段的排列顺序。差异往往体现在字段的详略上，而非布局逻辑。</p>
+        <div class="note">延伸提示：若发现某模块缺少预期字段，可查看该区域右上角是否有“更多”链接，通常指向完整列表。</div>
+      </div>
+
+      <div class="scene-card">
+        <h3>
+          场景三 · 延伸阅读
+          <span class="badge">延展</span>
+        </h3>
+        <p>从某一条具体信息出发（例如一支球队、一组赛果），通过点击名称或标识可以跳转到子页面或相关详情页。这些链接的样式统一为蓝色或带下划线的标准文本，与普通说明文字有明显区别。</p>
+        <div class="note">注意：部分子页面采用瀑布流加载，滚动时留意底部“加载更多”按钮，避免遗漏后续内容。</div>
+      </div>
+    </div>
+
+    <!-- 常见说明 -->
+    <div class="faq-summary" id="faq">
+      <h2>常见说明</h2>
+      <div class="faq-item">
+        <strong>信息更新频率</strong>
+        <p>首页展示的内容根据上游数据调度周期刷新，非实时推送。重要变动通常会在模块顶部标注时间戳或“更新于”字样。</p>
+      </div>
+      <div class="faq-item">
+        <strong>链接与跳转逻辑</strong>
+        <p>所有指向站内子页面的链接均会在当前窗口打开；指向外部资源或 <a href="https://www1-hthsports.com" target="_blank" rel="noopener">华体会</a> 主站其他分页的链接会以新标签页形式打开，便于保留当前浏览位置。</p>
+      </div>
+      <div class="faq-item">
+        <strong>页面结构适配</strong>
+        <p>窄屏设备下，部分卡片会由三列切换为单列，但标题和关键标签保持不变。若发现文字折行影响阅读，可尝试横屏或使用桌面视图。</p>
+      </div>
+      <div class="faq-item">
+        <strong>如何反馈</strong>
+        <p>页面底部未设置直接反馈入口，如有疑问或遇到异常展示，建议通过平台公开的客服渠道或站内消息功能进行描述。</p>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span>华体会 · 索引页 &mdash; 仅作信息整理与场景说明</span>
+    </div>
+  </div>
+</body>
+</html>
